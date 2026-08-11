@@ -101,7 +101,7 @@ export function Topbar({ onMenuClick, onSearch, searchQuery }: TopbarProps) {
               ) : (
                 notifications.map((n) => {
                   const meta = NOTIFICATION_META[n.type];
-                  const Icon = (Icons as Record<string, typeof Bell>)[meta?.icon ?? 'Bell'];
+                  const Icon = (Icons as unknown as Record<string, typeof Bell>)[meta?.icon ?? 'Bell'] ?? Bell;
                   return (
                     <button
                       key={n.id}
