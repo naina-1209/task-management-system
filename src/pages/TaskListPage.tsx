@@ -39,6 +39,11 @@ import { cn, isOverdue, formatDate, paginate, toInputDate } from '@/lib/utils';
 import type { Task, Priority, Status, KanbanColumn } from '@/types';
 
 const PAGE_SIZE = 8;
+const PRIORITY_RANK: Record<Priority, number> = {
+  High: 1,
+  Medium: 2,
+  Low: 3,
+};
 
 type View = 'list' | 'kanban';
 type TrashView = 'active' | 'archived' | 'trash';
